@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * 입력된 정수 n만큼 '*'을 출력하되, w개 마다 줄을 바꿔서 출력하는 프로그램
  */
-public class E14_Alternative3 {
+class E14_PrintStars1 {
 
     public static void main(String[] args) {
 

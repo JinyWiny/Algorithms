@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * 입력된 정수 n만큼 '+'와 '-'를 번갈아 가며 출력하는 프로그램
  */
-public class E12_Alternative1 {
+class E12_Alternative1 {
 
     public static void main(String[] args) {
 
