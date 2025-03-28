@@ -1,12 +1,13 @@
 package study.algorithms.datastructure;
 
 import java.util.Scanner;
-
+import study.algorithms.datastructure.E12_PhysicalExamination.PhysicalData;
 
 /**
- * 신체 검사 데이터를 처리하는 클래스
+ * 시력 분포를 오른쪽처럼 그래프로 출력하도록 수정하여 프로그램을 작성하세요.
+ * 기호 문자 *를 사람 수만큼 반복하여 나타내세요.
  */
-class E12_PhysicalExamination {
+class Q7_PhysicalExamination {
 
     static final int visionMAX = 21;
 
@@ -24,7 +25,7 @@ class E12_PhysicalExamination {
         }
     }
 
-    static double avgHeight(PhysicalData[] dat) {
+    static double avgHeight(E12_PhysicalExamination.PhysicalData[] dat) {
 
         double sum = 0;
 
@@ -36,7 +37,7 @@ class E12_PhysicalExamination {
         return sum / dat.length;
     }
 
-    static void distVision(PhysicalData[] dat, int[] dist) {
+    static void distVision(E12_PhysicalExamination.PhysicalData[] dat, int[] dist) {
 
         int i = 0;
 
@@ -53,14 +54,14 @@ class E12_PhysicalExamination {
 
         Scanner scanner = new Scanner(System.in);
 
-        PhysicalData[] x = {
-                new PhysicalData("강민하", 162, 0.3),
-                new PhysicalData("김찬우", 173, 0.7),
-                new PhysicalData("박준서", 175, 2.0),
-                new PhysicalData("유서범", 171, 1.5),
-                new PhysicalData("이수연", 168, 0.4),
-                new PhysicalData("장경오", 174, 1.2),
-                new PhysicalData("황지안", 169, 0.8),
+        E12_PhysicalExamination.PhysicalData[] x = {
+                new E12_PhysicalExamination.PhysicalData("강민하", 162, 0.3),
+                new E12_PhysicalExamination.PhysicalData("김찬우", 173, 0.7),
+                new E12_PhysicalExamination.PhysicalData("박준서", 175, 2.0),
+                new E12_PhysicalExamination.PhysicalData("유서범", 171, 1.5),
+                new E12_PhysicalExamination.PhysicalData("이수연", 168, 0.4),
+                new E12_PhysicalExamination.PhysicalData("장경오", 174, 1.2),
+                new E12_PhysicalExamination.PhysicalData("황지안", 169, 0.8),
         };
 
         int[] vdist = new int[visionMAX];
@@ -81,16 +82,7 @@ class E12_PhysicalExamination {
         distVision(x, vdist);
 
         System.out.println("\n시력 분포");
-        for (int i = 0; i < visionMAX; i++) {
-
-            System.out.printf("%3.1f～: ", i / 10.0);
-
-            for (int j = 0; j < vdist[i]; j++) {
-
-                System.out.print("*");
-            }
-
-            System.out.println();
-        }
+        for (int i = 0; i < visionMAX; i++)
+            System.out.printf("%3.1f～: %2d명\n", i / 10.0, vdist[i]);
     }
 }
